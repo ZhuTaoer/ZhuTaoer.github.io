@@ -1,23 +1,22 @@
-const  navbarBrand  =  document.querySelector('.container a');
+.svg {
+  width: 250pt;
+  height: 50pt;
+}
 
-navbarBrand.innerHTML  =  `
+.svg path {
+  stroke: white;
+  stroke-width: 1pt;
+  stroke-linecap: round;
+  stroke-dasharray: var(--l);
+  stroke-dashoffset: var(--l);
+  fill: none;
+  fill-rule: nonzero;
+  animation: stroke 25s forwards;
+  -webkit-animation: stroke 25s forwards;
+}
 
-<svg class="svg" width="516.211" height="104.591" viewBox="0 0 516.211 104.591" xmlns="http://www.w3.org/2000/svg">
-
-<g class="g" id="svgGroup" stroke-linecap="round"     
-fill-rule="evenodd" font-size="9pt" stroke="#000"     
-stroke-width="0.25mm" fill="none" style="stroke:#000;stroke-width:0.25mm;fill:none">
-
-<path d="省略的内容" vector-effect="non-scaling-stroke"/>
-
-</g>
-
-</svg>
-
-`;
-
-const  paths  =  document.querySelector('.container .navbar-brand .svg .g path')
-
-const  len  =  paths.getTotalLength()
-
-paths.style.setProperty('--l', len)
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
