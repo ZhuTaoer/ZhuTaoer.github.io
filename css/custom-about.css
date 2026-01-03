@@ -1,0 +1,19 @@
+/* 强制 About 页面单列布局 */
+#about-page .author-content {
+  display: block !important;
+}
+
+#about-page .author-content-item {
+  width: 100% !important;
+  max-width: 800px;
+  margin: 1rem 0 !important;  /* 左对齐：上下1rem，左右0 */
+}
+
+#about-page .author-content-item-group.column {
+  display: block !important;
+}
+
+#about-page .author-content-item-group .author-content-item {
+  width: 100% !important;
+  margin-bottom: 1rem;
+}
