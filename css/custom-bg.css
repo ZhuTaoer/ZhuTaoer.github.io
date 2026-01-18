@@ -1,0 +1,4 @@
+/* 整页背景设置 */
+html, body {
+  background: url(/img/yekong.png) fixed center/cover no-repeat !important;
+}
