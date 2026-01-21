@@ -6381,6 +6381,85 @@ h1.page-title + .tag-cloud-list {
   display: flex;
   flex-direction: column;
 }
+#aside-content >.card-widget.card-info {
+  background: var(--anzhiyu-card-bg);
+  box-shadow: var(--anzhiyu-shadow-black);
+  position: relative;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  #aside-content >.card-widget.card-info {
+    display: none;
+  }
+}
+#aside-content >.card-widget.card-info > .card-content {
+  padding: 1rem 1.2rem;
+  min-height: 320px;
+  position: relative;
+}
+#aside-content >.card-widget.card-info::before {
+  background: linear-gradient(-25deg, var(--anzhiyu-main), var(--anzhiyu-main-op-deep), var(--anzhiyu-main), var(--anzhiyu-main-op-deep));
+  background-size: 400%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  content: '';
+  animation: gradient 15s ease infinite;
+}
+#aside-content .card-info:hover .author-info-avatar {
+  opacity: 0;
+  transform: scale(0);
+}
+#aside-content .card-info:hover .author-info__description {
+  opacity: 1;
+}
+#aside-content .card-info:hover .author-status {
+  opacity: 0;
+  transform: scale(0);
+}
+#aside-content .card-info .author-info-avatar {
+  margin: 45px auto;
+  display: flex;
+  justify-content: center;
+  width: 118px;
+  height: 118px;
+  transition: cubic-bezier(0.69, 0.39, 0, 1.21) 0.3s;
+  transform-origin: bottom;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  #aside-content .card-info .author-info-avatar {
+    display: none;
+  }
+}
+#aside-content .card-info #author-info__sayhi {
+  text-align: left;
+  color: var(--anzhiyu-white);
+  background: var(--anzhiyu-white-op);
+  font-size: 12px;
+  margin: auto;
+  padding: 2px 8px;
+  border-radius: 12px;
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+}
+#aside-content .card-info #author-info__sayhi:hover {
+  background: var(--anzhiyu-card-bg);
+  color: var(--anzhiyu-fontcolor);
+  transform: scale(1.1);
+}
+#aside-content .card-info .banner-button-group .banner-button {
+  border-radius: 35px;
+  background: var(--anzhiyu-white-op);
+}
+#aside-content .card-info .banner-button-group .banner-button:hover {
+  background: var(--anzhiyu-white);
+  color: var(--anzhiyu-black);
+}
 [data-theme="dark"] #aside-content > .card-info {
   background: var(--anzhiyu-card-bg);
 }
