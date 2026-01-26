@@ -1,0 +1,168 @@
+/* 
+ * Album 相册页面排版优化
+ * 修复图片库布局，改进文字显示
+ */
+
+/* 相册容器优化 */
+.gallery-group-container {
+  width: 100% !important;
+  margin: 2rem 0 !important;
+}
+
+/* 相册集合样式 */
+.gallery-group {
+  margin-bottom: 3rem !important;
+}
+
+/* 相册标题 */
+.gallery-group-head {
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 2px solid rgba(144, 147, 153, 0.2) !important;
+}
+
+.gallery-group-head-title {
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.gallery-group-head-desc {
+  font-size: 1rem !important;
+  opacity: 0.7 !important;
+  line-height: 1.6 !important;
+  word-break: break-word !important;
+}
+
+/* 相册网格优化 */
+.gallery-group-main {
+  display: grid !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+}
+
+/* Grid 响应式布局 */
+@media screen and (min-width: 1200px) {
+  .gallery-group-main {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .gallery-group-main {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gallery-group-main {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 相册单项优化 */
+.gallery-group-item {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.gallery-group-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 相册图片 */
+.gallery-group-img {
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* 相册内容区域 */
+.gallery-group-content {
+  padding: 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+  flex: 1 !important;
+}
+
+/* 相册内容标题 */
+.gallery-group-content-title {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  word-break: break-word !important;
+}
+
+/* 相册描述文字 */
+.gallery-group-desc {
+  font-size: 0.95rem !important;
+  opacity: 0.75 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  display: block !important;
+  flex: 1 !important;
+}
+
+/* 相册地址 */
+.gallery-group-address {
+  font-size: 0.9rem !important;
+  opacity: 0.6 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.gallery-group-address::before {
+  content: "📍" !important;
+}
+
+/* 相册来源 */
+.gallery-group-from {
+  font-size: 0.85rem !important;
+  opacity: 0.5 !important;
+  font-style: italic !important;
+}
+
+/* 返回按钮优化 */
+.gallery-top-button {
+  margin: 1.5rem 0 !important;
+  padding: 0.8rem 1.5rem !important;
+  font-size: 1rem !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.gallery-top-button:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* 暗色模式支持 */
+[data-theme='dark'] .gallery-group-item {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme='dark'] .gallery-group-head {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .gallery-group-desc,
+[data-theme='dark'] .gallery-group-address {
+  opacity: 0.8 !important;
+}

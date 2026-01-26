@@ -1,0 +1,76 @@
+/* ==================================
+   全局卡片透明化设置 (Light Mode)
+   ================================== */
+
+/* 1. 首页文章卡片 */
+.recent-posts .recent-post-item,
+/* 2. 文章详情页、关于页、归档页 */
+#post, #page, #archive, 
+/* 3. 侧边栏的所有小工具 */
+#aside-content .card-widget,
+/* 4. 首页顶部的个人信息/格言/统计卡片 */
+.author-content-item,
+/* 5. 分类和标签页面的列表 */
+.category-lists .category-list,
+.tag-cloud-list {
+  /* 背景颜色：白色，0.8 代表 80% 不透明度 (建议 0.6 - 0.9 之间) */
+  background: rgba(255, 255, 255, 0.8) !important;
+  
+  /* 毛玻璃效果：模糊背景，让文字更清晰 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ==================================
+   全局卡片透明化设置 (Dark Mode / 夜间模式)
+   ================================== */
+[data-theme='dark'] .recent-posts .recent-post-item,
+[data-theme='dark'] #post, 
+[data-theme='dark'] #page, 
+[data-theme='dark'] #archive,
+[data-theme='dark'] #aside-content .card-widget,
+[data-theme='dark'] .author-content-item,
+[data-theme='dark'] .category-lists .category-list,
+[data-theme='dark'] .tag-cloud-list {
+  /* 夜间模式背景：黑色，0.5 透明度 */
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 顶部导航栏透明 */
+#nav {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+}
+/* 夜间模式导航栏 */
+[data-theme='dark'] #nav {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+
+
+/* 暴力修复相册描述竖排问题 v2 */
+.gallery-group-main .gallery-group-item .gallery-group-desc,
+.author-content-item .author-content-item-description,
+.category-lists .category-list .category-list-item .category-list-link .category-list-desc {
+  /* 1. 核心修复：重置 Flex 布局对宽度的挤压 */
+  flex: 1 1 auto !important; 
+  width: auto !important;
+  min-width: 200px !important; /* 强制给文字至少 200px 的宽度 */
+  
+  /* 2. 文本换行规则 */
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: keep-all !important; /* 保持单词完整，不要拆断单词 */
+  
+  /* 3. 显示模式 */
+  display: block !important;
+  margin-top: 8px !important;
+}
+
+/* 针对手机端的特殊处理 */
+@media screen and (max-width: 768px) {
+  .gallery-group-main .gallery-group-item {
+     height: auto !important;
+     flex-direction: column !important; /* 手机上强制垂直排列，防止横向挤压 */
+  }
+}

@@ -1,0 +1,354 @@
+/* 
+  字体优化方案 - 增强版
+  使用Google Fonts + 系统字体组合实现最佳中英文显示效果
+  优化了可读性、视觉层级、和响应式表现
+*/
+
+/* ====================================
+   Google Fonts 导入
+   ==================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ====================================
+   全局字体配置
+   ==================================== */
+:root {
+  /* 字体堆栈定义 */
+  --font-sans: 'Noto Sans SC', 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Noto Serif SC', 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Courier New', 'Consolas', 'Monaco', 'PingFang SC', monospace;
+  
+  /* 文字行高 */
+  --line-height-tight: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+}
+
+/* 基础HTML元素字体 */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: var(--line-height-normal);
+  letter-spacing: 0.3px;
+  color: var(--anzhiyu-fontcolor);
+}
+
+/* ====================================
+   标题排版优化
+   ==================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(66, 90, 239, 0.1);
+  padding-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ====================================
+   文章内容优化
+   ==================================== */
+#post,
+.post-content,
+.article-content,
+main {
+  font-family: var(--font-sans) !important;
+  font-size: 16px;
+  line-height: var(--line-height-relaxed);
+  letter-spacing: 0.2px;
+  word-spacing: 0.2em;
+}
+
+/* 段落优化 */
+p {
+  margin: 1.2em 0;
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+/* 列表优化 */
+li {
+  font-family: var(--font-sans) !important;
+  line-height: var(--line-height-normal);
+  margin: 0.5em 0;
+}
+
+ul, ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+/* ====================================
+   代码块与代码优化
+   ==================================== */
+code,
+pre,
+.highlight,
+.code-fence {
+  font-family: var(--font-mono) !important;
+  font-size: 14px;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+pre {
+  padding: 1.2em;
+  border-radius: 8px;
+  overflow-x: auto;
+  background: var(--anzhiyu-code-stress, #f6f8fa);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  background: rgba(144, 147, 153, 0.1);
+  color: var(--anzhiyu-fontcolor);
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+/* ====================================
+   引用块优化
+   ==================================== */
+blockquote {
+  font-family: var(--font-serif) !important;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.7);
+  border-left: 4px solid var(--anzhiyu-main);
+  padding: 1.2em;
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  background: rgba(66, 90, 239, 0.05);
+  border-radius: 4px;
+}
+
+/* ====================================
+   链接与按钮优化
+   ==================================== */
+a {
+  font-family: var(--font-sans) !important;
+  color: var(--anzhiyu-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+button,
+.btn {
+  font-family: var(--font-sans) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ====================================
+   导航栏与菜单优化
+   ==================================== */
+.nav-menu,
+.menus_items,
+.navbar {
+  font-family: var(--font-sans) !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: var(--line-height-tight);
+}
+
+/* ====================================
+   侧边栏优化
+   ==================================== */
+.sidebar-item,
+.aside-content,
+#aside-content {
+  font-family: var(--font-sans) !important;
+  font-size: 15px;
+  line-height: var(--line-height-normal);
+}
+
+.card-title {
+  font-family: var(--font-sans) !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1em;
+}
+
+/* ====================================
+   卡片与容器优化
+   ==================================== */
+.post-title {
+  font-family: var(--font-sans) !important;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+.card-title,
+.post-card-title {
+  font-family: var(--font-sans) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ====================================
+   表格优化
+   ==================================== */
+table {
+  font-family: var(--font-sans) !important;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+th {
+  font-weight: 600;
+  background: rgba(66, 90, 239, 0.1);
+  padding: 0.8em;
+  text-align: left;
+}
+
+td {
+  padding: 0.8em;
+  border-bottom: 1px solid rgba(144, 147, 153, 0.1);
+}
+
+tr:hover {
+  background: rgba(66, 90, 239, 0.05);
+}
+
+/* ====================================
+   页脚优化
+   ==================================== */
+footer {
+  font-family: var(--font-sans) !important;
+  font-size: 14px;
+  line-height: var(--line-height-normal);
+  letter-spacing: 0.2px;
+  opacity: 0.8;
+}
+
+/* ====================================
+   标签与分类优化
+   ==================================== */
+.post-tag,
+.tag-item,
+.category-item {
+  font-family: var(--font-sans) !important;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ====================================
+   元数据与日期优化
+   ==================================== */
+.meta,
+.post-meta,
+time {
+  font-family: var(--font-sans) !important;
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
+/* ====================================
+   响应式字体调整
+   ==================================== */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  .post-title {
+    font-size: 1.6rem;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+}
+
+/* ====================================
+   暗色模式字体优化
+   ==================================== */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='dark'] blockquote {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(66, 90, 239, 0.1);
+}
+
+[data-theme='dark'] code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] pre {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] table th {
+  background: rgba(66, 90, 239, 0.15);
+}
+
+[data-theme='dark'] tr:hover {
+  background: rgba(66, 90, 239, 0.1);
+}
