@@ -168,6 +168,73 @@
   border-bottom-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+/* 手机端优化 */
+@media screen and (max-width: 767px) {
+  .gallery-group-container {
+    margin: 1rem 0 !important;
+    padding: 0 1rem !important;
+  }
+
+  .gallery-group-head {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
+  .gallery-group-head-title {
+    font-size: 1.5rem !important;
+  }
+
+  .gallery-group-head-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .gallery-group-item {
+    border-radius: 8px !important;
+  }
+
+  .gallery-group-img {
+    height: 200px !important;
+  }
+
+  .gallery-group-content {
+    padding: 1rem !important;
+    gap: 0.6rem !important;
+  }
+
+  .gallery-group-content-title {
+    font-size: 1.1rem !important;
+  }
+
+  .gallery-group-desc {
+    font-size: 0.9rem !important;
+  }
+
+  .gallery-group-address {
+    font-size: 0.85rem !important;
+  }
+
+  .gallery-group-from {
+    font-size: 0.8rem !important;
+  }
+
+  .gallery-top-button {
+    width: 100% !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Masonry布局手机端兼容 */
+  .gallery-group-main {
+    gap: 1rem !important;
+  }
+
+  /* 确保图片容器自适应 */
+  .gallery-group-item img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
 [data-theme='dark'] .gallery-group-desc,
 [data-theme='dark'] .gallery-group-address {
   opacity: 0.8 !important;
