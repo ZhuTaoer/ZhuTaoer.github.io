@@ -30,8 +30,14 @@
 .gallery-group-head-desc {
   font-size: 1rem !important;
   opacity: 0.7 !important;
-  line-height: 1.6 !important;
+  line-height: 1.8 !important;
   word-break: break-word !important;
+  white-space: normal !important;
+  text-align: left !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  display: block !important;
+  margin: 0.5rem 0 0 0 !important;
 }
 
 /* 相册网格优化 */
