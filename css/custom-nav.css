@@ -1,0 +1,145 @@
+/* 
+ * 导航栏手机端优化
+ * 确保顶部导航栏在手机端正常显示
+ */
+
+/* 顶部导航栏 */
+#nav {
+  width: 100% !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* 导航栏容器 */
+.navbar-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* 导航菜单 */
+#menu-main-nav {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* 导航菜单项 */
+#menu-main-nav > li {
+  min-width: auto !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+}
+
+#menu-main-nav > li > a {
+  padding: 0.5rem 0.8rem !important;
+  font-size: 0.95rem !important;
+}
+
+/* 手机端导航栏优化 */
+@media screen and (max-width: 767px) {
+  #nav {
+    height: auto !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  /* 隐藏导航栏按钮 */
+  #toggle-menu {
+    display: block !important;
+    z-index: 1001 !important;
+  }
+
+  /* 导航菜单在手机端响应 */
+  #menu-main-nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    flex-direction: column !important;
+    background: var(--anzhiyu-card-bg) !important;
+    border-top: 1px solid var(--anzhiyu-border-color) !important;
+  }
+
+  #menu-main-nav.open {
+    display: flex !important;
+  }
+
+  #menu-main-nav > li {
+    width: 100% !important;
+    display: block !important;
+    border-bottom: 1px solid var(--anzhiyu-border-color) !important;
+  }
+
+  #menu-main-nav > li > a {
+    display: block !important;
+    padding: 0.8rem 1rem !important;
+    width: 100% !important;
+  }
+
+  /* 二级菜单手机端处理 */
+  #menu-main-nav > li > .submenu {
+    display: none !important;
+    position: static !important;
+    background: var(--anzhiyu-background) !important;
+    border: none !important;
+  }
+
+  #menu-main-nav > li.active > .submenu {
+    display: block !important;
+  }
+
+  #menu-main-nav > li .submenu > li > a {
+    padding-left: 2rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* 导航栏加载高度调整 */
+  body {
+    padding-top: 3rem !important;
+  }
+
+  /* 确保导航栏可见 */
+  nav {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* 平板端 */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  #menu-main-nav > li > a {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  #menu-main-nav > li {
+    min-width: auto !important;
+  }
+}
+
+/* 桌面端 */
+@media screen and (min-width: 1200px) {
+  #menu-main-nav > li > a {
+    padding: 0.8rem 1.2rem !important;
+  }
+}
+
+/* 确保导航栏元素不被隐藏 */
+nav,
+#nav,
+.navbar-container,
+#menu-main-nav,
+#menu-main-nav > li,
+#menu-main-nav > li > a {
+  box-sizing: border-box !important;
+}
+
+/* 防止导航栏溢出 */
+[data-theme='light'] #nav,
+[data-theme='dark'] #nav {
+  overflow: visible !important;
+}
